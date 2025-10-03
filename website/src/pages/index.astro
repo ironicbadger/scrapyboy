@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import VideoCard from '../components/VideoCard.astro';
+
+const allTranscripts = await getCollection('transcripts');
+
+// Sort by published date, newest first
+const sortedVideos = allTranscripts.sort((a, b) => {
+  return new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime();
+});
+
+const totalVideos = sortedVideos.length;
+---
+
+<Base title="Scrapyboy - YouTube Transcript Archive">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold mb-4">YouTube Transcript Archive</h1>
+    <p class="text-gray-600 text-lg">
+      Searchable transcripts of {totalVideos} videos from the Tailscale YouTube channel
+    </p>
+  </div>
+
+  <div id="search-results" class="mb-8"></div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    {sortedVideos.map((video) => (
+      <VideoCard video={video} />
+    ))}
+  </div>
+</Base>
+
+<script is:inline>
+  // Note: Pagefind search only works after build (npm run build)
+  // In dev mode, search will be disabled
+  if (typeof window !== 'undefined') {
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchContainer = document.getElementById('search-container');
+      if (searchContainer) {
+        searchContainer.innerHTML = '<p class="text-sm text-gray-500">Search available after build</p>';
+      }
+    });
+  }
+</script>

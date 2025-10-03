@@ -1,0 +1,315 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const transcripts = await getCollection('transcripts');
+  return transcripts.map((transcript) => ({
+    params: { slug: transcript.slug },
+    props: { transcript },
+  }));
+}
+
+const { transcript } = Astro.props;
+const { Content } = await transcript.render();
+const { data } = transcript;
+
+const thumbnailUrl = `https://i.ytimg.com/vi/${data.video_id}/maxresdefault.jpg`;
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+function formatDuration(seconds: number): string {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = seconds % 60;
+
+  if (hours > 0) {
+    return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
+  return `${minutes}:${secs.toString().padStart(2, '0')}`;
+}
+---
+
+<Base title={`${data.title} - Transcript`} description={data.description}>
+  <div class="max-w-7xl mx-auto">
+    <a href="/" class="text-primary hover:underline mb-4 inline-block">
+      ← Back to all videos
+    </a>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Main content - Video and Transcript -->
+      <div class="lg:col-span-2">
+        <!-- Video Player -->
+        <div class="aspect-video w-full mb-4">
+          <iframe
+            src={`https://www.youtube.com/embed/${data.video_id}`}
+            title={data.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="w-full h-full rounded-lg"
+          ></iframe>
+        </div>
+
+        <!-- Video Title -->
+        <h1 class="text-2xl font-bold mb-2">{data.title}</h1>
+
+        <!-- Video Metadata Row -->
+        <div class="flex items-center gap-4 text-sm text-gray-600 mb-4 pb-4 border-b">
+          <span>{formatDate(data.published_at)}</span>
+          <span>•</span>
+          <span>{formatDuration(data.duration_seconds)}</span>
+          <span>•</span>
+          <a
+            href={data.youtube_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-red-600 hover:text-red-700 font-medium"
+          >
+            Watch on YouTube ↗
+          </a>
+        </div>
+
+        <!-- Description (collapsible) -->
+        {data.description && (
+          <div class="mb-6 pb-6 border-b">
+            <details class="group">
+              <summary class="cursor-pointer font-semibold text-gray-900 hover:text-primary list-none flex items-center gap-2">
+                <svg class="w-4 h-4 transition-transform group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                Description
+              </summary>
+              <div class="mt-3 text-sm text-gray-700 whitespace-pre-line">
+                {data.description}
+              </div>
+            </details>
+          </div>
+        )}
+
+        <!-- Transcript -->
+        <div class="transcript-content">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-bold">Transcript</h2>
+            <div class="flex items-center gap-2">
+              <input
+                type="search"
+                id="transcript-search"
+                placeholder="Search..."
+                class="px-3 py-1.5 text-sm border border-gray-300 rounded-lg w-48 focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <span id="search-results-count" class="text-xs text-gray-600"></span>
+            </div>
+          </div>
+          <div class="prose prose-sm max-w-none" id="transcript-text">
+            <Content />
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar - Metadata -->
+      <div class="lg:col-span-1">
+        <div class="bg-white rounded-lg shadow-lg p-4 sticky top-4">
+          <h3 class="font-bold text-lg mb-4">Video Info</h3>
+
+          <div class="space-y-3 text-sm">
+            <div>
+              <span class="text-gray-600">Channel:</span>
+              <p class="font-medium">{data.channel_name}</p>
+            </div>
+
+            <div>
+              <span class="text-gray-600">Published:</span>
+              <p class="font-medium">{formatDate(data.published_at)}</p>
+            </div>
+
+            <div>
+              <span class="text-gray-600">Duration:</span>
+              <p class="font-medium">{formatDuration(data.duration_seconds)}</p>
+            </div>
+
+            {data.word_count && (
+              <div>
+                <span class="text-gray-600">Word count:</span>
+                <p class="font-medium">{data.word_count.toLocaleString()} words</p>
+              </div>
+            )}
+
+            <div class="pt-3 border-t">
+              <span class="text-gray-600 text-xs">Transcribed with:</span>
+              <p class="font-medium text-xs">{data.model_used}</p>
+              <p class="text-gray-500 text-xs">{formatDate(data.transcribed_at)}</p>
+            </div>
+          </div>
+
+          <a
+            href={data.youtube_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block mt-6 bg-red-600 hover:bg-red-700 text-white text-center px-4 py-2 rounded-lg font-semibold transition-colors"
+          >
+            Watch on YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<script is:inline>
+  // In-page transcript search
+  if (typeof window !== 'undefined') {
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('transcript-search');
+      const transcriptText = document.getElementById('transcript-text');
+      const searchCount = document.getElementById('search-results-count');
+
+      if (!searchInput || !transcriptText) return;
+
+      let currentMatchIndex = -1;
+      let matches = [];
+
+      function clearHighlights() {
+        const highlighted = transcriptText.querySelectorAll('mark.search-highlight');
+        highlighted.forEach(mark => {
+          const parent = mark.parentNode;
+          parent.replaceChild(document.createTextNode(mark.textContent), mark);
+          parent.normalize();
+        });
+        matches = [];
+        currentMatchIndex = -1;
+      }
+
+      function highlightText(searchTerm) {
+        clearHighlights();
+
+        if (!searchTerm || searchTerm.length < 2) {
+          searchCount.textContent = '';
+          return;
+        }
+
+        const walker = document.createTreeWalker(
+          transcriptText,
+          NodeFilter.SHOW_TEXT,
+          null,
+          false
+        );
+
+        const nodesToReplace = [];
+        let node;
+
+        while (node = walker.nextNode()) {
+          const text = node.textContent;
+          const regex = new RegExp(searchTerm, 'gi');
+          if (regex.test(text)) {
+            nodesToReplace.push(node);
+          }
+        }
+
+        nodesToReplace.forEach(textNode => {
+          const text = textNode.textContent;
+          const regex = new RegExp(`(${searchTerm})`, 'gi');
+          const parts = text.split(regex);
+
+          const fragment = document.createDocumentFragment();
+          parts.forEach(part => {
+            if (part.toLowerCase() === searchTerm.toLowerCase()) {
+              const mark = document.createElement('mark');
+              mark.className = 'search-highlight bg-yellow-200 px-1 rounded';
+              mark.textContent = part;
+              fragment.appendChild(mark);
+              matches.push(mark);
+            } else if (part) {
+              fragment.appendChild(document.createTextNode(part));
+            }
+          });
+
+          textNode.parentNode.replaceChild(fragment, textNode);
+        });
+
+        if (matches.length > 0) {
+          searchCount.textContent = `${matches.length} match${matches.length !== 1 ? 'es' : ''}`;
+          currentMatchIndex = 0;
+          matches[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+          matches[0].classList.add('bg-orange-300');
+        } else {
+          searchCount.textContent = 'No matches';
+        }
+      }
+
+      let debounceTimer;
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          highlightText(e.target.value);
+        }, 300);
+      });
+
+      // Clear on escape
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          searchInput.value = '';
+          clearHighlights();
+          searchCount.textContent = '';
+        }
+      });
+    });
+  }
+</script>
+
+<style is:global>
+  .transcript-content {
+    line-height: 1.8;
+  }
+
+  .transcript-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .transcript-content strong a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+
+  .transcript-content strong a:hover {
+    text-decoration: underline;
+  }
+
+  /* Prose styling for transcript content */
+  .prose {
+    color: #374151;
+  }
+
+  .prose strong {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .prose p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+
+  .prose a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+
+  /* Search highlight styles */
+  mark.search-highlight {
+    transition: background-color 0.2s ease;
+  }
+</style>

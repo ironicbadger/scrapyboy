@@ -1,0 +1,67 @@
+---
+interface Props {
+  video: {
+    slug: string;
+    data: {
+      video_id: string;
+      title: string;
+      duration_seconds: number;
+      published_at: string;
+      youtube_url: string;
+    };
+  };
+}
+
+const { video } = Astro.props;
+const { slug, data } = video;
+const thumbnailUrl = `https://i.ytimg.com/vi/${data.video_id}/mqdefault.jpg`;
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function formatDuration(seconds: number): string {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = seconds % 60;
+
+  if (hours > 0) {
+    return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
+  return `${minutes}:${secs.toString().padStart(2, '0')}`;
+}
+---
+
+<article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+  <a href={`/video/${slug}`} class="block">
+    <div class="relative aspect-video bg-gray-200">
+      <img
+        src={thumbnailUrl}
+        alt={data.title}
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs px-2 py-1 rounded">
+        {formatDuration(data.duration_seconds)}
+      </div>
+    </div>
+    <div class="p-4">
+      <h2 class="font-semibold text-lg mb-2 line-clamp-2 hover:text-primary">
+        {data.title}
+      </h2>
+      <div class="flex items-center gap-3 text-sm text-gray-600">
+        <span>{formatDate(data.published_at)}</span>
+      </div>
+    </div>
+  </a>
+</article>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
