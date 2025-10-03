@@ -98,6 +98,12 @@ function formatDuration(seconds: number): string {
           <div class="flex items-center justify-between mb-4">
             <h2 class="text-xl font-bold">Transcript</h2>
             <div class="flex items-center gap-2">
+              <button
+                id="edit-mode-toggle"
+                class="px-3 py-1.5 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                ✏️ Edit Mode
+              </button>
               <input
                 type="search"
                 id="transcript-search"
@@ -107,7 +113,16 @@ function formatDuration(seconds: number): string {
               <span id="search-results-count" class="text-xs text-gray-600"></span>
             </div>
           </div>
-          <div class="prose prose-sm max-w-none" id="transcript-text">
+          <div id="edit-mode-banner" class="hidden mb-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <div class="flex items-center justify-between">
+              <div class="text-sm">
+                <strong>Edit Mode Active:</strong> Click any text to edit. Changes are saved to your browser.
+                <button id="export-corrections" class="ml-4 text-primary hover:underline">Export Corrections</button>
+              </div>
+              <button id="clear-corrections" class="text-sm text-red-600 hover:underline">Clear All Edits</button>
+            </div>
+          </div>
+          <div class="prose prose-sm max-w-none" id="transcript-text" contenteditable="false">
             <Content />
           </div>
         </div>
@@ -163,14 +178,115 @@ function formatDuration(seconds: number): string {
 </Base>
 
 <script is:inline>
-  // In-page transcript search
+  // Edit mode and transcript search
   if (typeof window !== 'undefined') {
     window.addEventListener('DOMContentLoaded', () => {
       const searchInput = document.getElementById('transcript-search');
       const transcriptText = document.getElementById('transcript-text');
       const searchCount = document.getElementById('search-results-count');
+      const editModeToggle = document.getElementById('edit-mode-toggle');
+      const editModeBanner = document.getElementById('edit-mode-banner');
+      const exportCorrections = document.getElementById('export-corrections');
+      const clearCorrections = document.getElementById('clear-corrections');
 
-      if (!searchInput || !transcriptText) return;
+      if (!searchInput || !transcriptText || !editModeToggle) return;
+
+      // Get video ID from URL
+      const videoId = window.location.pathname.split('/').filter(Boolean).pop();
+      const storageKey = `transcript-edits-${videoId}`;
+
+      // Edit mode state
+      let editModeActive = false;
+      let originalContent = transcriptText.innerHTML;
+
+      // Load saved edits from localStorage
+      function loadEdits() {
+        try {
+          const saved = localStorage.getItem(storageKey);
+          if (saved) {
+            transcriptText.innerHTML = saved;
+            return true;
+          }
+        } catch (e) {
+          console.error('Error loading edits:', e);
+        }
+        return false;
+      }
+
+      // Save edits to localStorage
+      function saveEdits() {
+        try {
+          localStorage.setItem(storageKey, transcriptText.innerHTML);
+        } catch (e) {
+          console.error('Error saving edits:', e);
+        }
+      }
+
+      // Load any existing edits on page load
+      const hasEdits = loadEdits();
+      if (hasEdits) {
+        originalContent = transcriptText.innerHTML;
+      }
+
+      // Toggle edit mode
+      editModeToggle.addEventListener('click', () => {
+        editModeActive = !editModeActive;
+
+        if (editModeActive) {
+          transcriptText.setAttribute('contenteditable', 'true');
+          transcriptText.style.outline = '2px dashed #3b82f6';
+          transcriptText.style.outlineOffset = '4px';
+          editModeToggle.textContent = '💾 Save Edits';
+          editModeToggle.classList.add('bg-primary', 'text-white', 'border-primary');
+          editModeBanner.classList.remove('hidden');
+        } else {
+          transcriptText.setAttribute('contenteditable', 'false');
+          transcriptText.style.outline = 'none';
+          editModeToggle.textContent = '✏️ Edit Mode';
+          editModeToggle.classList.remove('bg-primary', 'text-white', 'border-primary');
+          editModeBanner.classList.add('hidden');
+          saveEdits();
+        }
+      });
+
+      // Auto-save on input (debounced)
+      let saveTimer;
+      transcriptText.addEventListener('input', () => {
+        if (!editModeActive) return;
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(saveEdits, 1000);
+      });
+
+      // Export corrections as JSON
+      exportCorrections.addEventListener('click', () => {
+        const corrections = {
+          videoId: videoId,
+          timestamp: new Date().toISOString(),
+          original: originalContent,
+          edited: transcriptText.innerHTML
+        };
+
+        const blob = new Blob([JSON.stringify(corrections, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `transcript-corrections-${videoId}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      // Clear all corrections
+      clearCorrections.addEventListener('click', () => {
+        if (confirm('Clear all edits and restore original transcript?')) {
+          localStorage.removeItem(storageKey);
+          transcriptText.innerHTML = originalContent;
+          if (editModeActive) {
+            editModeToggle.click(); // Exit edit mode
+          }
+        }
+      });
+
+      // Existing search functionality below...
 
       let currentMatchIndex = -1;
       let matches = [];

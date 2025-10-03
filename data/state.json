@@ -2,7 +2,7 @@
   "channel_id": "UCcdv38QxPjSMqbt5ffLhJLA",
   "channel_name": "Tailscale",
   "last_checked": "2025-10-03T15:53:41.290986",
-  "videos_processed": 13,
+  "videos_processed": 84,
   "videos_failed": 0,
   "last_video_date": null,
   "videos": {
@@ -124,6 +124,645 @@
       "attempt_count": 1
     },
     "vkZwu7I4tcY": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:10:26.351047",
+      "duration_seconds": 920,
+      "transcription_time": 25.524689435958862,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "3PkjPiN06Rc": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:10:42.232365",
+      "duration_seconds": 137,
+      "transcription_time": 3.2204136848449707,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "PEoMmZOj6Cg": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:11:38.106019",
+      "duration_seconds": 879,
+      "transcription_time": 25.781104564666748,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "LmfWyeHhay8": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:12:11.121486",
+      "duration_seconds": 386,
+      "transcription_time": 11.292632341384888,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "wCqXYPQFNuE": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:12:43.828114",
+      "duration_seconds": 497,
+      "transcription_time": 13.49579405784607,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "b8oLMl6mx28": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:13:17.477861",
+      "duration_seconds": 64,
+      "transcription_time": 1.706322193145752,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "7pxovvASu58": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:14:45.725983",
+      "duration_seconds": 1616,
+      "transcription_time": 49.19186019897461,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "Vt4PDUXB_fg": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:15:51.605559",
+      "duration_seconds": 1084,
+      "transcription_time": 31.803234815597534,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "dneNjDu4HKU": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:18:00.886269",
+      "duration_seconds": 2587,
+      "transcription_time": 67.43529272079468,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "OEKrDH55Jco": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:18:19.991021",
+      "duration_seconds": 199,
+      "transcription_time": 5.571103572845459,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "B9Y5JbrnGr8": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:19:16.271494",
+      "duration_seconds": 939,
+      "transcription_time": 22.004457473754883,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "lxE8a8gIA8c": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:19:37.046856",
+      "duration_seconds": 242,
+      "transcription_time": 6.27018404006958,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "ReUjR5BqsqM": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:20:02.276661",
+      "duration_seconds": 249,
+      "transcription_time": 6.770220756530762,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "Btqw56DFhro": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:21:14.895689",
+      "duration_seconds": 1269,
+      "transcription_time": 36.258992433547974,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "OQJAX-Ce1YY": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:22:12.646341",
+      "duration_seconds": 971,
+      "transcription_time": 26.717485904693604,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "19z3hoOU0h0": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:23:18.445897",
+      "duration_seconds": 1144,
+      "transcription_time": 30.831145524978638,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "O_9wT-5LoHM": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:25:02.150801",
+      "duration_seconds": 2000,
+      "transcription_time": 52.84463548660278,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "E_7ItEyFV8s": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:25:16.412836",
+      "duration_seconds": 46,
+      "transcription_time": 1.2541141510009766,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "6FlgdNs7R04": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:25:51.481735",
+      "duration_seconds": 422,
+      "transcription_time": 10.176342487335205,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "k_MxlYIHAvI": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:26:05.982522",
+      "duration_seconds": 106,
+      "transcription_time": 2.6331253051757812,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "ASZm_HyrHIc": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:26:48.932164",
+      "duration_seconds": 517,
+      "transcription_time": 18.36128568649292,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "Ad7D2pkFNdA": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:29:07.265001",
+      "duration_seconds": 388,
+      "transcription_time": 10.499549150466919,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "BdQ-Gz6bs3g": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:30:01.468730",
+      "duration_seconds": 843,
+      "transcription_time": 23.16697406768799,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "C8XoZYJcFtI": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:30:37.131289",
+      "duration_seconds": 515,
+      "transcription_time": 14.288209199905396,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "WbaA4QYc6DA": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:30:47.149748",
+      "duration_seconds": 15,
+      "transcription_time": 0.4361717700958252,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "sPUkAm7yDlU": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:32:08.816254",
+      "duration_seconds": 1453,
+      "transcription_time": 41.48669147491455,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "WB8uTiD6JTo": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:34:20.401064",
+      "duration_seconds": 2850,
+      "transcription_time": 73.5023684501648,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "IyHu-ey9w9o": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:34:43.006792",
+      "duration_seconds": 250,
+      "transcription_time": 6.698354721069336,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "l-CautbghQ4": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:36:40.498162",
+      "duration_seconds": 2222,
+      "transcription_time": 68.30688714981079,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "dVCOY_Z-5bs": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:37:26.944931",
+      "duration_seconds": 773,
+      "transcription_time": 21.523163318634033,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "ChXN7pDTo5k": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:38:14.885352",
+      "duration_seconds": 832,
+      "transcription_time": 22.16981029510498,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "tqvvZhGrciQ": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:39:54.446495",
+      "duration_seconds": 1918,
+      "transcription_time": 52.302600383758545,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "hYd5etBpsO0": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:40:27.579845",
+      "duration_seconds": 500,
+      "transcription_time": 13.285036325454712,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "cg9d87PuanE": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:41:29.535866",
+      "duration_seconds": 1029,
+      "transcription_time": 28.88639545440674,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "m2iLUqUimJo": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:42:30.242193",
+      "duration_seconds": 1082,
+      "transcription_time": 30.611711502075195,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "JC63OGSzTQI": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:43:14.324940",
+      "duration_seconds": 730,
+      "transcription_time": 19.300121068954468,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "MpxmfpCl20c": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:43:43.131547",
+      "duration_seconds": 382,
+      "transcription_time": 10.422736644744873,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "V7pfNjzztbI": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:43:56.285993",
+      "duration_seconds": 58,
+      "transcription_time": 1.761950969696045,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "2r8YnvXLKFU": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:46:41.658305",
+      "duration_seconds": 3428,
+      "transcription_time": 96.78485536575317,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "CipnV3yx2jw": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:48:07.946413",
+      "duration_seconds": 1609,
+      "transcription_time": 43.27992057800293,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "xKfBeaEUvWk": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:48:36.185070",
+      "duration_seconds": 402,
+      "transcription_time": 10.272777318954468,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "-InBzRQWXwc": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:49:02.347439",
+      "duration_seconds": 394,
+      "transcription_time": 9.320628643035889,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "Q6MH3URLHfM": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:49:42.303520",
+      "duration_seconds": 666,
+      "transcription_time": 16.35123324394226,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "39BnH0qZUl8": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:50:09.880734",
+      "duration_seconds": 454,
+      "transcription_time": 9.397071361541748,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "Jn8_Sh4r8d4": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:51:09.516340",
+      "duration_seconds": 1081,
+      "transcription_time": 28.335519313812256,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "ETkqina913I": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:51:30.849911",
+      "duration_seconds": 257,
+      "transcription_time": 6.4436187744140625,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "O4vN3Cwj0pQ": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:52:53.356607",
+      "duration_seconds": 1549,
+      "transcription_time": 42.08288073539734,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "Xjo7_yHOTTA": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:53:07.625740",
+      "duration_seconds": 95,
+      "transcription_time": 2.4484639167785645,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "1wqUoiDIxqU": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:53:53.316916",
+      "duration_seconds": 720,
+      "transcription_time": 20.18923783302307,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "z1vBMMQzCEk": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:54:35.283192",
+      "duration_seconds": 696,
+      "transcription_time": 18.451818227767944,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "at0pbojOxpU": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:54:51.720496",
+      "duration_seconds": 158,
+      "transcription_time": 4.070524215698242,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "rFPbOJc-pQY": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:56:26.252091",
+      "duration_seconds": 1735,
+      "transcription_time": 51.019758224487305,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "k5Xgt31yK2U": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:58:16.593788",
+      "duration_seconds": 2180,
+      "transcription_time": 57.954113721847534,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "0Wz79I35cdg": {
+      "status": "completed",
+      "processed_at": "2025-10-03T17:58:48.954760",
+      "duration_seconds": 476,
+      "transcription_time": 12.855127096176147,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "M6ERYgw0GZA": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:01:47.529149",
+      "duration_seconds": 3612,
+      "transcription_time": 101.16436910629272,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "ea0fL3FVFDw": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:02:50.519894",
+      "duration_seconds": 1145,
+      "transcription_time": 24.178751230239868,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "5bxU3Kltd1g": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:03:15.196721",
+      "duration_seconds": 333,
+      "transcription_time": 8.503666400909424,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "0o2EhK-QvmY": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:04:07.824126",
+      "duration_seconds": 898,
+      "transcription_time": 24.658246517181396,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "_x_ySYZqRME": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:06:48.430750",
+      "duration_seconds": 3334,
+      "transcription_time": 92.20473909378052,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "YTjYXii4WzI": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:07:41.513052",
+      "duration_seconds": 844,
+      "transcription_time": 26.06378984451294,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "27apZcZrwks": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:08:19.747460",
+      "duration_seconds": 570,
+      "transcription_time": 16.30882477760315,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "cW4_OCLABcc": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:08:35.757104",
+      "duration_seconds": 143,
+      "transcription_time": 3.2878384590148926,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "WjeVNsL1s9U": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:09:42.345125",
+      "duration_seconds": 1324,
+      "transcription_time": 32.345250844955444,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "7NFuhjNwslY": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:09:55.751438",
+      "duration_seconds": 60,
+      "transcription_time": 1.5440301895141602,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "IYG-UCcJthU": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:10:16.252212",
+      "duration_seconds": 220,
+      "transcription_time": 5.767062187194824,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "vuY7oHsny7I": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:11:04.499602",
+      "duration_seconds": 529,
+      "transcription_time": 14.313028335571289,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "athLW5fZgHw": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:11:49.836463",
+      "duration_seconds": 711,
+      "transcription_time": 19.28749656677246,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "hSYsaZJEzCs": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:13:13.804954",
+      "duration_seconds": 1543,
+      "transcription_time": 42.176212549209595,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "zngSuqCM4d8": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:14:24.847629",
+      "duration_seconds": 1213,
+      "transcription_time": 35.14864230155945,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "JcrcbkDGJuk": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:15:57.564426",
+      "duration_seconds": 1656,
+      "transcription_time": 46.3746976852417,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "cCC3PSBCkqk": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:17:13.477966",
+      "duration_seconds": 1315,
+      "transcription_time": 37.62958264350891,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "vDxmtRByXDY": {
       "status": "processing",
       "processed_at": null,
       "duration_seconds": null,

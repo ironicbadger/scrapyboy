@@ -9,6 +9,7 @@ services:
       - ../data/transcripts:/app/src/content/transcripts:ro
       - ./src:/app/src
       - ./public:/app/public
+      - ./dist:/app/dist
     environment:
       - NODE_ENV=development
     command: npm run dev
