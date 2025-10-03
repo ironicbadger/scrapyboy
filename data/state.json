@@ -1,0 +1,136 @@
+{
+  "channel_id": "UCcdv38QxPjSMqbt5ffLhJLA",
+  "channel_name": "Tailscale",
+  "last_checked": "2025-10-03T15:53:41.290986",
+  "videos_processed": 13,
+  "videos_failed": 0,
+  "last_video_date": null,
+  "videos": {
+    "HnhgmRDiBFo": {
+      "status": "completed",
+      "processed_at": "2025-10-03T15:54:21.066680",
+      "duration_seconds": 565,
+      "transcription_time": 15.777461051940918,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "T15t-V9_faU": {
+      "status": "completed",
+      "processed_at": "2025-10-03T15:55:02.251924",
+      "duration_seconds": 629,
+      "transcription_time": 18.323466062545776,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "UmVMaymH1-s": {
+      "status": "completed",
+      "processed_at": "2025-10-03T15:55:47.241909",
+      "duration_seconds": 744,
+      "transcription_time": 19.861002683639526,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "08clF9srJ2k": {
+      "status": "completed",
+      "processed_at": "2025-10-03T15:56:22.829295",
+      "duration_seconds": 549,
+      "transcription_time": 15.03476595878601,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "QHWNu_in0Zc": {
+      "status": "completed",
+      "processed_at": "2025-10-03T15:57:26.163721",
+      "duration_seconds": 1092,
+      "transcription_time": 30.15764594078064,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "5lJrXEXF8eM": {
+      "status": "completed",
+      "processed_at": "2025-10-03T15:58:04.816973",
+      "duration_seconds": 559,
+      "transcription_time": 15.888878345489502,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "t-iJq8jp6y0": {
+      "status": "completed",
+      "processed_at": "2025-10-03T15:58:20.869927",
+      "duration_seconds": 115,
+      "transcription_time": 2.761887550354004,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "4AxaKxZIO4Y": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:00:30.519266",
+      "duration_seconds": 2834,
+      "transcription_time": 75.59760355949402,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "W5JgLGlY-6k": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:01:03.657956",
+      "duration_seconds": 456,
+      "transcription_time": 13.773526430130005,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "833pTn_3HYI": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:01:54.309627",
+      "duration_seconds": 837,
+      "transcription_time": 22.6924831867218,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "7EoCa9HP9Bc": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:05:19.361584",
+      "duration_seconds": 4327,
+      "transcription_time": 130.4429841041565,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "XXx7NDgDaRU": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:06:49.132783",
+      "duration_seconds": 1418,
+      "transcription_time": 45.76830720901489,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "57JDI1S4rFA": {
+      "status": "completed",
+      "processed_at": "2025-10-03T16:09:31.848646",
+      "duration_seconds": 3613,
+      "transcription_time": 88.51542925834656,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "vkZwu7I4tcY": {
+      "status": "processing",
+      "processed_at": null,
+      "duration_seconds": null,
+      "transcription_time": null,
+      "method": null,
+      "error": null,
+      "attempt_count": 0
+    }
+  }
+}

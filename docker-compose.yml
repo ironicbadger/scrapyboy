@@ -1,0 +1,34 @@
+services:
+  transcription:
+    build:
+      context: .
+    image: scrapyboy:latest
+    container_name: scrapyboy-transcriber
+
+    volumes:
+      - ./data:/data
+      - ./config.yaml:/app/config.yaml:ro
+
+    environment:
+      - YOUTUBE_API_KEY=${YOUTUBE_API_KEY}
+      # Uncomment if you have NVIDIA GPU and want to use it
+      # - CUDA_VISIBLE_DEVICES=0
+
+    # Uncomment for GPU support (requires nvidia-docker)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+    # Run once and exit (not a daemon)
+    restart: "no"
+
+    # Override entrypoint for interactive use
+    # command: --help
+
+volumes:
+  data:
+    driver: local

@@ -1,0 +1,62 @@
+# Channel Configuration
+channel:
+  # You can use either the channel handle (@tailscale) or ID (UCxxxxxxxx)
+  # Using direct ID avoids API call to resolve handle
+  id: "UCcdv38QxPjSMqbt5ffLhJLA"  # Tailscale channel ID
+  name: "Tailscale"
+
+# Transcription Settings
+transcription:
+  # Custom vocabulary - terms that should be recognized correctly
+  custom_vocabulary:
+    - "Tailscale"
+    - "WireGuard"
+    - "VPN"
+    - "headscale"
+    - "subnet"
+    - "ACL"
+    - "DERP"
+    - "NAT"
+    - "peer-to-peer"
+    - "P2P"
+
+  # Model preference: auto, tiny, base, small, medium, large
+  # "auto" will choose based on available resources
+  model_preference: "auto"
+
+  # Language code (ISO 639-1)
+  language: "en"
+
+# Processing Settings
+processing:
+  # Number of videos to process concurrently (Phase 2)
+  max_concurrent: 1
+
+  # Keep audio files after transcription (useful for debugging)
+  keep_audio: false
+
+  # Retry failed transcriptions
+  retry_failed: true
+
+# YouTube API
+youtube:
+  # Environment variable name containing the API key
+  api_key_env: "YOUTUBE_API_KEY"
+
+  # Maximum results per API call
+  max_results: 50
+
+# Output Settings
+output:
+  # Output formats to generate
+  formats:
+    - markdown
+
+  # Markdown style: "timestamped" or "continuous"
+  markdown_style: "timestamped"
+
+  # Output directory (absolute path for container)
+  output_dir: "/data/transcripts"
+
+  # Temporary directory for downloads
+  temp_dir: "/data/temp"
