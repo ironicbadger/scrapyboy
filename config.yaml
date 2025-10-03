@@ -8,6 +8,7 @@ channel:
 # Transcription Settings
 transcription:
   # Custom vocabulary - terms that should be recognized correctly
+  # These are used in the initial_prompt to help Whisper recognize technical terms
   custom_vocabulary:
     - "Tailscale"
     - "WireGuard"
@@ -19,6 +20,41 @@ transcription:
     - "NAT"
     - "peer-to-peer"
     - "P2P"
+    - "Kubernetes"
+    - "kubectl"
+    - "YAML"
+    - "CLI"
+    - "API"
+    - "SSH"
+    - "macOS"
+    - "iOS"
+    - "Android"
+    - "Linux"
+    - "Docker"
+    - "Proxmox"
+    - "Immich"
+    - "Raspberry Pi"
+    - "Plex"
+    - "Jellyfin"
+    - "MagicDNS"
+    - "Funnel"
+    - "HTTPS"
+    - "tsnet"
+    - "tsidp"
+
+  # Common misheard terms and their corrections
+  # Format: "wrong_term": "correct_term"
+  common_corrections:
+    "image through": "Immich"
+    "tail scale": "Tailscale"
+    "wire guard": "WireGuard"
+    "head scale": "headscale"
+    "curb net is": "Kubernetes"
+    "cube cuddle": "kubectl"
+    "cube CTL": "kubectl"
+    "proxmocks": "Proxmox"
+    "der P": "DERP"
+    "magic DNS": "MagicDNS"
 
   # Model preference: auto, tiny, base, small, medium, large
   # "auto" will choose based on available resources

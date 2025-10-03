@@ -59,6 +59,7 @@ def process_video(video_id: str, config: dict, force: bool = False):
     transcriber = Transcriber(
         model_preference=config["transcription"]["model_preference"],
         custom_vocabulary=config["transcription"]["custom_vocabulary"],
+        common_corrections=config["transcription"].get("common_corrections", {}),
         language=config["transcription"]["language"]
     )
 
@@ -205,6 +206,7 @@ def process_channel(config: dict, force: bool = False, retry_failed: bool = True
         transcriber = Transcriber(
             model_preference=config["transcription"]["model_preference"],
             custom_vocabulary=config["transcription"]["custom_vocabulary"],
+            common_corrections=config["transcription"].get("common_corrections", {}),
             language=config["transcription"]["language"]
         )
 
