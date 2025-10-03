@@ -2,7 +2,7 @@
   "channel_id": "UCcdv38QxPjSMqbt5ffLhJLA",
   "channel_name": "Tailscale",
   "last_checked": "2025-10-03T15:53:41.290986",
-  "videos_processed": 84,
+  "videos_processed": 89,
   "videos_failed": 0,
   "last_video_date": null,
   "videos": {
@@ -763,6 +763,51 @@
       "attempt_count": 1
     },
     "vDxmtRByXDY": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:18:03.359537",
+      "duration_seconds": 851,
+      "transcription_time": 23.83286190032959,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "MZu_T5YgW5c": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:18:33.309129",
+      "duration_seconds": 418,
+      "transcription_time": 11.885328531265259,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "jOcYJ81-3xM": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:19:01.662062",
+      "duration_seconds": 392,
+      "transcription_time": 10.642250061035156,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "guHoZ68N3XM": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:22:20.362836",
+      "duration_seconds": 3779,
+      "transcription_time": 107.67403793334961,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "40AXZUN6c_8": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:22:49.564499",
+      "duration_seconds": 342,
+      "transcription_time": 8.579622268676758,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "k3NqliNGo6s": {
       "status": "processing",
       "processed_at": null,
       "duration_seconds": null,
