@@ -2,7 +2,7 @@
   "channel_id": "UCcdv38QxPjSMqbt5ffLhJLA",
   "channel_name": "Tailscale",
   "last_checked": "2025-10-03T15:53:41.290986",
-  "videos_processed": 89,
+  "videos_processed": 91,
   "videos_failed": 0,
   "last_video_date": null,
   "videos": {
@@ -808,6 +808,24 @@
       "attempt_count": 1
     },
     "k3NqliNGo6s": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:24:18.458308",
+      "duration_seconds": 1636,
+      "transcription_time": 44.181710958480835,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "_63aiKEoalA": {
+      "status": "completed",
+      "processed_at": "2025-10-03T18:24:31.354408",
+      "duration_seconds": 112,
+      "transcription_time": 0.341660737991333,
+      "method": "cpu",
+      "error": null,
+      "attempt_count": 1
+    },
+    "dZs-xPKD2vM": {
       "status": "processing",
       "processed_at": null,
       "duration_seconds": null,
